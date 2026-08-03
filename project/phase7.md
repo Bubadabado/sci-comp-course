@@ -25,13 +25,13 @@ Since updating a cell of `u` requires data from the rows above and below it, the
 
 Here's an example of how `2d-tiny-in.wo` would be divided up using `split_range()` and what the halos should look like:
 
-![MPI How to Read In](../img/mpi-read-in.png)
+![A diagram shows MPI processes reading a global input wave from `wavefiles/2D/2d-tiny-in.wo`, creating partial local arrays using split_range(), and adding halo rows as needed. Each rank stores the header data, data it owns, and the halo values required for computation.](../img/mpi-read-in.png)
 
 Debugging MPI programs can be tricky. The ["Debugging, Profiling, and Optimization"](https://byuhpc.github.io/sci-comp-course/resources.html#debugging-profiling-and-optimization) section gives some resources you can turn to. If you want to do things the hard, old school way, you can `std::cout` information. You are not guaranteed to have process 0 print first followed by the others in order. Adding `#include <unistd.h>` and something like `sleep(1 * comm_rank);` can help with the timing issues.
 
 Writing is very similar to the read, but in reverse. Make sure that each process only writes out the rows it's responsible for and NOT the halos.
 
-![MPI Write](../img/mpi-write.png)
+![A schematic explains parallel MPI-IO writing: multiple ranks hold portions of arrays `u` and `v`, and each process writes its assigned data and halo information into separate regions of `wavefiles/2D/2d-tiny-out.wo` using an offset, layout, and `write_at` operation.](../img/mpi-write.png)
 
 Now that you can write, don't forget about [`wavefiles`](https://byuhpc.github.io/sci-comp-course/resources.html#the-project). `wavediff` will help you quickly identify differences and `waveshow` will print the full input file. Use these liberally as you debug.
 
@@ -41,7 +41,7 @@ When you run with multiple processes on [NFS](https://en.wikipedia.org/wiki/Netw
 
 The `energy()` function is a great spot to make sure each process is only working on its assigned rows and not the halos. Before doing any stepping, `2d-tiny-in.out` has 0.096 for dynamic energy and 0 for potential energy. Each process should have it's own `double global_e, local_e` or something similar. `local_e` is the energy from the cells the process is in charge of. Once that's calculated, you can then call `comm_world.allreduce(std::plus<>(), local_e, global_e);` to have the processes exchange and sum up all the `local_e`s into the `global_e` variable.
 
-![MPI Energy Calculation](../img/mpi-energy.png)
+![The `energy()` diagram highlights each rank’s locally owned array cells and shows their contributions being summed into each process’s local dynamic energy, followed by an MPI reduction with the local potential energy to obtain total energy. Halo cells are marked with H and are excluded from the highlighted local calculations.](../img/mpi-energy.png)
 
 ## Step
 
@@ -72,7 +72,7 @@ Feel free to rename things more appropriately for our project.
 
 This is what `step()` looks like:
 
-![MPI Step](../img/mpi-step.png)
+![Three stages of an MPI `step()` operation show each rank updating only the rows it owns with a Laplacian, then exchanging halo values, and finally producing updated values for the next step. For the first step() swap, all interior cells show 0.0546353.](../img/mpi-step.png)
 
 Food for thought: Depending on how you implement things, you might not need to exchange halos for `u` because it's only using `v` data which has been updated.
 

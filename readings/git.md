@@ -20,7 +20,7 @@ How do you back up your projects? Here are what some people consider backups:
 
 And what about keeping versions of projects? Versioning is to keep snapshots of a project as it progresses. Many students email themselves a copy of a paper each time it reaches a significant milestone. Sometimes our versioning tells a tragic story:
 
-![Relatable.jpg](../img/story-in-filenames.gif)
+![A Windows file-browser screenshot titled “A STORY TOLD IN FILE NAMES” lists chronologically named data files, analysis documents, a thesis outline, meeting notes, a junk folder, and a final “startingover” file, suggesting a research project’s fustrating history told through filenames.](../img/story-in-filenames.gif)
 
 Version control is a solution to these issues. Good version control will
 
@@ -83,7 +83,7 @@ This creates a hidden directory named .git in the current location. The director
 - unmodified: the file hasn't been changed since the last commit
 - modified: the file has been changed since the last commit
 
-![Init](../img/git-untracked.png)
+![A Git working-tree diagram shows `README.txt` and `hello.sh` in the Untracked area, while the Unmodified, Modified, and Staged areas and the Commits area are empty.](../img/git-untracked.png)
 
 You can use the command `git status` to see the current state of your working directory. Currently, both `README.txt` and `hello.sh` are untracked:
 
@@ -110,7 +110,7 @@ git add README.txt hello.sh # adds the two test files to the staging area
 
 Running git add will add specified files to the staging area. Think of the staging area as a loading bay to put files that you plan to save in a snapshot. Once a file is added to the staging area, it is tracked for modifications. 
 
-![Stage](../img/git-staged.png)
+![A Git status diagram shows modified `README.txt` and `hello.sh` moving into the Staged area, while the corresponding files remain in the Modified area awaiting a commit.](../img/git-staged.png)
 
 Running `git status` again, we can see that git recognizes that there are new files in the staging area:
 
@@ -141,7 +141,7 @@ git commit -m "Initial Commit" # commits a snapshot of files
 
 When you run `git commit`, a snapshot of the staged files is created. Once committed, the files are considered unmodified. Commits require that you include a message related to the commit, and the message for the first commit is typically "Initial Commit".
 
-![Commit](../img/git-commit.png)
+![A Git diagram shows `README.txt` and `hello.sh` staged and then committed into the Commits area, creating commit `5106d18` labeled “Initial Commit.”](../img/git-commit.png)
 
 After a commit, `git status` will report that there is nothing more to commit. Valuable is the `git log` command, which displays a historical log of commits:
 
@@ -170,7 +170,7 @@ Within the commit object, you can find the following additional information: sna
 
 What if we wanted to modify the [files above](#overview) to say "Hello, Cosmo!" instead of "Hello, World!"? What happens to the file in Git? Git keeps a hash of each tracked file to detect when it has changed. When you modify the files, Git will detect it and add it to the modified group.
 
-![Modified](../img/git-modified.png)
+![A Git status diagram shows `README.txt` and `hello.sh` in the Modified area, with arrows from the Unmodified area indicating that both files have been changed since the initial commit.](../img/git-modified.png)
 
 You can check this with `git status`:
 
@@ -198,7 +198,7 @@ $ git commit -m "Cosmo"
 
 The new commit will have a new hash associated with it, and the files are once again considered unmodified. The commit object will be updated, this time having a parent of the initial commit.
 
-![Unmodified](../img/git-unmodified.png)
+![A Git status diagram shows `README.txt` and `hello.sh` in the Unmodified area and corresponding staged copies, with arrows indicating that the files came from a prior commit and have not changed.](../img/git-unmodified.png)
 
 ### Remove or Rename a File
 
@@ -253,7 +253,7 @@ index ba82105..b75165b 100644
 
 Branches are an extremely lightweight tool to manage workflows. Branches are just a movable pointer to a particular commit. The branch you start on is called "master" (or "main" in [newer versions](https://github.com/github/renaming?tab=readme-ov-file#renaming-the-default-branch-from-master)) by default. Every time you commit, the current branch's pointer moves to the new commit object. Note that there is also a special HEAD reference that points to the current branch you're on. This may or may not be the master.
 
-![Commit](../img/git-branch-commit.png)
+![A Git diagram shows `master` pointing to commit `b501eb8` (“Cosmo”), which follows `5106d18` (“Initial Commit”); a burst labeled “COMMIT!” marks creation of the newer commit.](../img/git-branch-commit.png)
 
 ### Create a Branch
 
@@ -275,13 +275,13 @@ $ git branch
   master
 ```
 
-![Branch](../img/git-branch-branch.png)
+![A Git diagram shows `master` pointing to commit `b501eb8` (“Cosmo”), while a new `bronco` branch points to the same commit and `head` is attached to `bronco`.](../img/git-branch-branch.png)
 
 Committing to non-master branches is exactly the same process. However, the new bronco branch will keep track of the new changes whereas the master branch no longer tracks the changes.
 
 You can switch back to the master branch and start a new line of commits that would be separate from bronco. You'd end up with something looking like this:
 
-![Unmerged](../img/git-branch-unmerged.png)
+![A Git commit graph shows `master` pointing to `3c04417` (“List Coaches”) and `bronco` pointing to `a75eb30` (“Cosmo Backflip”), with separate histories that have not yet been merged. The `head` reference points to `master`.](../img/git-branch-unmerged.png)
 
 ### Basic Merging
 
@@ -299,7 +299,7 @@ Merge made by the 'recursive strategy.
  create mode 100644 List Coaches
 ```
 
-![Merged](../img/git-branch-merged.png)
+![A Git commit graph shows the `bronco` branch merged into `master` at commit `672b43b` (“Merge branch bronco”), which has two parent histories and leads to the earlier commits on both branches. The `head` reference points to `master`.](../img/git-branch-merged.png)
 
 Once the merge is complete, you may find yourself wanting to delete the old branch as it's no longer needed. This can easily be done with the command `git branch -d [branch name]`.
 
@@ -348,7 +348,7 @@ To do so, you first check out the branch that will be rebased onto another branc
 
 At this point, the target branch can be checked out and merged, which fast-forwards it to the same commit as the bronco branch. In the end, this resulting commit is the same as if a three-way merge was performed–but the rebase provides a re-written, simpler history.
 
-![Before rebase](../img/git-branch-pre-rebase.png)
+![A Git commit graph shows `master` at `bed07eb` (“Cougarettes Dance”) and the `bronco` branch at `ff01056` (“Cosmo Dances”), with both branches sharing the earlier `b501eb8` (“Cosmo”) commit before a rebase.](../img/git-branch-pre-rebase.png)
 
 ```shell
 $ git checkout bronco
@@ -364,7 +364,7 @@ Fast-forward
   1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-![After rebase](../img/git-branch-rebased.png)
+![A Git graph illustrates rebasing the `bronco` branch and then merging it into `master`: the histories converge at commit `c1ff945` (“Cosmo Dances”), with bursts labeled “REBASE!” and “MERGE!” marking the operations.](../img/git-branch-rebased.png)
 
 Rebasing makes your history cleaner, but does so by rewriting it. As such, it's usually a bad idea to rebase commits that exist outside of a personal repository.
 
@@ -383,7 +383,7 @@ $ git log --oneline --decorate
 3c04417 (tag: v1.0) Recruit Players
 ```
 
-![Tag](../img/git-branch-tag.png)
+![A Git commit graph shows the tag `v1.0` attached to commit `3c04417` (“List Coaches”), while `master` and `head` point to the later merge commit `672b43b`; a burst labeled “TAG!” highlights the tag.](../img/git-branch-tag.png)
 
 
 

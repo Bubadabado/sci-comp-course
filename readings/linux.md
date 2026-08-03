@@ -5,7 +5,7 @@
 
 ## Operating Systems
 
-<img style="float:right;" src="../img/os-diagram.png">
+<img style="float:right;" src="../img/os-diagram.png" alt="A layered operating-system diagram places Applications above the Kernel, with the Kernel communicating bidirectionally with the CPU, Memory, and Devices.">
 
 Microsoft Windows, Mac OS, and GNU/Linux are all operating systems (OS). The heart of an OS is the kernel. The kernel manages access to the hardware and also provides ways for applications to talk to each other. The operating system usually provides software like a desktop interface, a text editor (and other textual or graphical user interfaces), and software for using storage devices.
 

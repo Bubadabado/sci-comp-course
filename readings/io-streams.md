@@ -11,7 +11,7 @@ Linux allows you to manipulate input and output streams (I/O streams). Input str
 | `stdout` | Normal output | 1 | Terminal |
 | `stderr` | Error output | 2 | Terminal |
 
-![I/O Streams](../img/io-streams.png)
+![A keyboard sends stdin to `bionano_software`, which has separate standard output (stdout, file descriptor 1) and standard error (stderr, file descriptor 2) streams.](../img/io-streams.png)
 
 ## Redirects
 
@@ -26,7 +26,7 @@ grep -i 'claws al ghul' catman_begins.txt > output.txt
 grep -i 'claws al ghul' catman_begins.txt >> output.txt
 ```
 
-![Redirect stdout](../img/io-redirect-stdout.png)
+![A keyboard supplies stdin to the Linux `grep` command; its stdout stream is redirected to a text file while stderr remains directed toward the Linux terminal.](../img/io-redirect-stdout.png)
 
 ### `stderr`: "`2>`" or "`2>>`"
 
@@ -39,7 +39,7 @@ vlc mr_smith_goes_to_pawshington.mpg 2> error.log
 vlc mr_smith_goes_to_pawshington.mpg 2>> error.log
 ```
 
-![Redirect stderr](../img/io-redirect-stderr.png)
+![A keyboard supplies stdin to the VLC media player; VLC's stdout is shown as a normal stream, while stderr is directed toward a warning output represented by a small portrait and warning symbol.](../img/io-redirect-stderr.png)
 
 ### Both `stdout` and `stderr`
 
@@ -50,7 +50,7 @@ bionano_software > output.log 2> error.log   # create
 bionano_software >> output.log 2>> error.log # append
 ```
 
-![Redirect both](../img/io-redirect-stdout-stderr.png)
+![A keyboard feeds stdin to `bionano_software`, whose stdout and stderr streams are shown leading to separate output destinations represented by a DNA symbol and a warning symbol.](../img/io-redirect-stdout-stderr.png)
 
 ### `stdin`: "`<`"
 
@@ -65,7 +65,7 @@ sort < cats.txt > sorted_cats.txt
 sort cats.txt > sorted_cats.txt
 ```
 
-![Redirect stdin](../img/redirect-stdin.png)
+![A diagram shows standard input feeding a Linux `sort` command, while the command produces standard output (stdout) and standard error (stderr) for the terminal.](../img/redirect-stdin.png)
 
 ### Combine streams
 
@@ -84,4 +84,4 @@ ping -c 10 procatinator.com &> output.txt # shorthand
 ./automated_task.sh &> /dev/null # run the program, throwing away all output
 ```
 
-![Discard output](../img/io-discard-output.png)
+![A keyboard sends stdin to `automated_task.sh`, which redirects stdout and stderr to a blackhole indicating that the command’s output streams are discarded.](../img/io-discard-output.png)

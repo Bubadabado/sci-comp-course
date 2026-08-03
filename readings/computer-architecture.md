@@ -19,7 +19,7 @@ Most servers have 1, 2, or 4 chips. It gets increasingly hard to set up the comm
 
 The communication fabric between these CPUs is generally a fully-connected mesh topology, where every endpoint has a direct connection to every other endpoint.
 
-![Mutli-CPU topology](../img/multi-cpu-architecture.png)
+![Three panels compare CPU architectures: one CPU has zero communication paths, two CPUs have one path, and four CPUs have six pairwise communication paths. Boxes labeled CPU are connected by arrows representing the available links.](../img/multi-cpu-architecture.png)
 
 
 
@@ -39,7 +39,7 @@ In general, faster storage technology costs more per capacity than slower storag
 
 Modern processors provide a small amount of SRAM in a series of core-specific or chip-level caches. These storage spaces are used to temporarily store data or instructions from DRAM (AKA main memory). When accessing a memory location, the processor checks its cache first before going to main memory. Going out to main memory to fetch something is orders of magnitude slower than getting it from cache.
 
-![Cache control flow](../img/cache-control-flow.png)
+![A flowchart shows a processor reading a memory location, checking whether the data is in cache, and either reading it directly on a cache hit or handling a cache miss by checking for space, evicting a cache line if necessary, loading a full line from RAM, and then reading the requested data.](../img/cache-control-flow.png)
 
 When a processor needs to access a certain memory location in RAM, it first checks if that location has been loaded into the processor's cache. If it has, the data is read directly from the cache, but if it hasn't (a **cache miss**), main memory needs to be accessed (a very expensive operation): cache lines are evicted if there isn't enough room to store the data coming in from main memory, then the data is copied into the cache. Only then does the processor finally read the data, directly from the cache.
 

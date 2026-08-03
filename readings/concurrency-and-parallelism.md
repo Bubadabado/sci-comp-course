@@ -40,7 +40,7 @@ Task 2: Make Breadsticks
 
 Total time (purely serial): 150 minutes
 
-![not_concurrent.png](../img/not_concurrent.png)
+![A timeline labeled “Not Concurrent” shows one CPU core completing tasks 1.1, 1.2, and 1.3 before beginning tasks 2.1, 2.2, and 2.3.](../img/not_concurrent.png)
 
 If Chef Core cannot run concurrently, he completes the tasks in the listed order. It takes him over 2 hours, and his soup is dished up before he even starts making breadsticks. This takes too long and results in cold soup.
 
@@ -55,7 +55,7 @@ Chef Core knows about concurrency and decides to partially reorder the tasks lik
 
 Total time: 150 minutes
 
-![concurrent_1.png](../img/concurrent_1.png)
+![A concurrent-execution timeline shows tasks 1.1 and 1.2 followed by tasks 2.1 and 2.2, then short tasks 1.3 and 2.3 at the end, illustrating overlapping lifelines for two task groups on one CPU core.](../img/concurrent_1.png)
 
 Now both the soup and the breadsticks can be served at roughly the same time! Because the main tasks overlap, Chef Core is running concurrently. 
 
@@ -71,7 +71,7 @@ He also realizes that he's spending a lot of time waiting for the soup to simmer
 
 Total time: 95 minutes
 
-![concurrent_2.png](../img/concurrent_2.png)
+![A timeline labeled “Concurrent” shows one CPU core interleaving tasks 1.1, 1.2, 2.1, 2.2, 2.3, and 1.3, with task 2 waiting on an external event before task 2.3 completes.](../img/concurrent_2.png)
 
 This drastically cuts down the time spent waiting around. Chef Core is an expert at managing tasks concurrently.
 
@@ -91,4 +91,4 @@ Task 4: Decorate a Cake
 
 On the night, the sous-chef does 3.2 before 3.1 and then 4.1 before finishing the salad. There’s no strict ordering, so the sequence is unusual but valid for concurrency. With two cooks working at once, Chef Core and the sous-chef are in parallel until the sous-chef finishes. Parallelism lets them complete more work in the same wall-clock time.
 
-![parallel.png](../img/parallel.png)
+![A timeline compares two CPU cores executing interleaved tasks. Core 1 runs tasks 1.1, 1.2, 2.1, and 2.2, pauses while waiting for an external event, then runs 2.3 and 1.3; core 2 independently runs tasks 3.2, 3.1, 4.1, 3.3, and 4.2.](../img/parallel.png)
