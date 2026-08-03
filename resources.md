@@ -12,9 +12,7 @@ The course relies heavily on [Victor Eijkhout's Art of HPC](https://theartofhpc.
 
 Software on the supercomputer is generally accessed with [modules](https://rc.byu.edu/wiki/?id=Environment+Modules).
 
-Jobs are submitted via [Slurm](https://rc.byu.edu/wiki/?id=Slurm).
-
-["Getting Started"](https://www.youtube.com/watch?v=i1r9BxHBG0I&list=PL326A5EB4E3B16FED) playlist on [BYUSupercomputing's YouTube channel](http://youtube.com/BYUSupercomputing).
+Jobs are submitted via the [Slurm job scheduler](https://rc.byu.edu/wiki/?id=Slurm).
 
 ## Quality of Life
 Please read through our ["Tips and Tricks" page](https://rc.byu.edu/wiki/?id=Tips+and+Tricks) to make your life significantly easier. If you find yourself repeating commands, this will be the biggest help.
@@ -32,7 +30,7 @@ wget https://byuhpc.github.io/sci-comp-course/project/wavefiles.tar.gz
 tar xf wavefiles.tar.gz
 ```
 
-You'll find many wave orthotope files from 1 to 8 dimensions (in case you're doing the [extra credit](assignments/extra-credit.md#project)), stored in the directories `1D`, `2D`, etc. Files with "`in`" in their names are input files, initialized and with simulation time zero; the corresponding "`out`" files are correct output files.
+You'll find many wave orthotope files from 1 to 8 dimensions (in case you're doing the [project's extra credit](assignments/extra-credit.md#project)), stored in the directories `1D`, `2D`, etc. Files with "`in`" in their names are input files, initialized and with simulation time zero; the corresponding "`out`" files are correct output files.
 
 Feel free to move copies of these files to locations that are more convenient for you.
 
@@ -53,7 +51,7 @@ wavefiles/bin/wavediff wavefiles/2D/2d-small-out.wo my-2d-small-out.wo
 ```
 No output means they are the same.
 
-Once [checkpointing](project/phase2#checkpointing) is implemented, you can debug your solver at each iteration. Running:
+Once [the checkpoint component](project/phase2#checkpointing) is implemented, you can debug your solver at each iteration. Running:
 
 ```shell
 INTVL=0.01 wavefiles/bin/wavesolve wavefiles/2D/2d-small-in.wo
@@ -63,7 +61,7 @@ will generate correct checkpoint files for `2d-small-in.wo`. These files can be 
 Use these tools liberally.
 
 #### Altering $PATH
-It can quickly become cumbersome to type out the path to the binary files. You can add them to your [$PATH](readings/environment-variables#PATH) like so:
+It can quickly become cumbersome to type out the path to the binary files. You can add them to your [$PATH environment variable](readings/environment-variables#PATH) like so:
 
 ```shell
 export PATH=/path/to/wavefiles/bin:$PATH
@@ -98,7 +96,7 @@ Using `WaveSim.jl` allows you to look at wave orthotopes interactively.
 
 You're expected to come into the class with either some C++ experience or the ability to [pick up languages quickly](http://www.catb.org/esr/writings/unix-koans/recruiter.html), so we don't teach programming in general or C++ specifically.
 
-Unless you have an established workflow for programming on the supercomputer, we strongly recommend [setting up VS Code for remote editing](https://rc.byu.edu/wiki/index.php?page=Remote+Development+with+VS+Code). You'll find the [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) extensions helpful. The enlightened will love the [Vim extension](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+Unless you have an established workflow for programming on the supercomputer, we strongly recommend [setting up VS Code for remote editing](https://rc.byu.edu/wiki/index.php?page=Remote+Development+with+VS+Code). You'll find the [C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [Julia extension](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) helpful. The enlightened will love the [Vim extension](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
 
 Since this is a class about *high performance* computing, you'll do some [optimization](https://viralinstruction.com/posts/hardware/). An [efficient algorithm](https://youtu.be/ZZuD6iUe3Pc) is of course vital for speed, but [data locality is critical](http://gameprogrammingpatterns.com/data-locality.html) and not talked about enough--for example, linked lists are theoretically faster than arrays for some algorithms, but [the hardware realities mean they're almost never actually the right choice](https://www.linkedin.com/pulse/why-linked-lists-avoided-rahul-raghunath/). Vector instructions enable significant speedups now that clock speeds have plateaued.
 

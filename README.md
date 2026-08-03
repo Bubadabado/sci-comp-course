@@ -8,6 +8,11 @@ cd sci-comp-course
 # I had to do this, not sure if that's just a setup problem on my end
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export GEM_PATH="$GEM_HOME"
+
+# Install Ruby if you don't have it
+sudo snap switch ruby --channel=3.2/stable
+sudo snap refresh ruby
+
 # Install Ruby stuff and run
 bundle install
 bundle exec jekyll serve
