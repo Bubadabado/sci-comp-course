@@ -1,0 +1,1 @@
+A grid of nodes N0–N9 shows jobs occupying different numbers of time blocks, with a vertical column at block 13 stopping all nodes. Empty gaps before that column illustrate space that can be filled by shorter jobs through backfilling.

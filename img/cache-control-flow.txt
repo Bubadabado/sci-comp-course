@@ -1,0 +1,1 @@
+A flowchart shows a processor reading a memory location, checking whether the data is in cache, and either reading it directly on a cache hit or handling a cache miss by checking for space, evicting a cache line if necessary, loading a full line from RAM, and then reading the requested data.

@@ -1,0 +1,1 @@
+A Git diagram shows `master` pointing to commit `b501eb8` (“Cosmo”), which follows `5106d18` (“Initial Commit”); a burst labeled “COMMIT!” marks creation of the newer commit.

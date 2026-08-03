@@ -1,0 +1,1 @@
+A keyboard sends stdin to `bionano_software`, which has separate standard output (stdout, file descriptor 1) and standard error (stderr, file descriptor 2) streams.

@@ -1,0 +1,1 @@
+A Git graph illustrates rebasing the `bronco` branch and then merging it into `master`: the histories converge at commit `c1ff945` (“Cosmo Dances”), with bursts labeled “REBASE!” and “MERGE!” marking the operations.

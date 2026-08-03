@@ -1,0 +1,1 @@
+A keyboard supplies stdin to the Linux `grep` command; its stdout stream is redirected to a text file while stderr remains directed toward the Linux terminal.

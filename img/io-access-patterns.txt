@@ -1,0 +1,1 @@
+Two file-access patterns are compared: reading two large contiguous regions requires two reads, while reading a checkerboard pattern of small regions requires sixteen reads.

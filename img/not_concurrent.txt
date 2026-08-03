@@ -1,0 +1,1 @@
+A timeline labeled “Not Concurrent” shows one CPU core completing tasks 1.1, 1.2, and 1.3 before beginning tasks 2.1, 2.2, and 2.3.

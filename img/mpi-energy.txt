@@ -1,0 +1,1 @@
+The `energy()` diagram highlights each rank’s locally owned array cells and shows their contributions being summed into each process’s local dynamic energy, followed by an MPI reduction with the local potential energy to obtain total energy. Halo cells are marked with H and are excluded from the highlighted local calculations.

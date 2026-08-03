@@ -1,0 +1,1 @@
+Three panels compare CPU architectures: one CPU has zero communication paths, two CPUs have one path, and four CPUs have six pairwise communication paths. Boxes labeled CPU are connected by arrows representing the available links.

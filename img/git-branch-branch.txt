@@ -1,0 +1,1 @@
+A Git diagram shows `master` pointing to commit `b501eb8` (“Cosmo”), while a new `bronco` branch points to the same commit and `head` is attached to `bronco`.

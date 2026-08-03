@@ -1,0 +1,1 @@
+A Git working-tree diagram shows `README.txt` and `hello.sh` in the Untracked area, while the Unmodified, Modified, and Staged areas and the Commits area are empty.

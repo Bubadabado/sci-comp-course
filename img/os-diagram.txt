@@ -1,0 +1,1 @@
+A layered operating-system diagram places Applications above the Kernel, with the Kernel communicating bidirectionally with the CPU, Memory, and Devices.

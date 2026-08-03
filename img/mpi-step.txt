@@ -1,0 +1,2 @@
+Three stages of an MPI `step()` operation show each rank updating only the rows it owns with a Laplacian, then exchanging halo values, 
+and finally producing updated values for the next step. For the first step() swap, all interior cells show 0.0546353.

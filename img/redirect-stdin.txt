@@ -1,0 +1,1 @@
+A diagram shows standard input feeding a Linux `sort` command, while the command produces standard output (stdout) and standard error (stderr) for the terminal.

@@ -1,0 +1,1 @@
+A schematic explains parallel MPI-IO writing: multiple ranks hold portions of arrays `u` and `v`, and each process writes its assigned data and halo information into separate regions of `wavefiles/2D/2d-tiny-out.wo` using an offset, layout, and `write_at` operation.

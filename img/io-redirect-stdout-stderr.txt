@@ -1,0 +1,1 @@
+A keyboard feeds stdin to `bionano_software`, whose stdout and stderr streams are shown leading to separate output destinations represented by a DNA symbol and a warning symbol.

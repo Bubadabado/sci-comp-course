@@ -1,0 +1,2 @@
+A line graph titled “CPUs per Account” shows CPU usage over time for multiple accounts. An annotation indicates that jobs 
+with a seven-day maximum are limited to less CPUs per account than jobs with a three-day maximum.

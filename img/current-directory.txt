@@ -1,0 +1,1 @@
+The path `/home/cosmo/computer/cougar_genes/.` is shown with an arrow looping back to the same directory, illustrating that `.` represents the current directory.

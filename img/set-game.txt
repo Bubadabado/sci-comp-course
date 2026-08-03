@@ -1,0 +1,1 @@
+A 4-by-3 grid of twelve cards from the game Set displays combinations of colored symbols, symbol shapes, counts, and solid or striped fills.

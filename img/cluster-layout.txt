@@ -1,0 +1,1 @@
+A cluster-layout diagram connects a user’s computer to login nodes over SSH and login nodes to compute nodes through Slurm. Login nodes and compute nodes share storage through NFS, and the login environment is also connected to the internet.

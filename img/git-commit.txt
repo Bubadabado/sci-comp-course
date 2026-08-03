@@ -1,0 +1,1 @@
+A Git diagram shows `README.txt` and `hello.sh` staged and then committed into the Commits area, creating commit `5106d18` labeled “Initial Commit.”

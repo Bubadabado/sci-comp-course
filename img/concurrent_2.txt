@@ -1,0 +1,1 @@
+A timeline labeled “Concurrent” shows one CPU core interleaving tasks 1.1, 1.2, 2.1, 2.2, 2.3, and 1.3, with task 2 waiting on an external event before task 2.3 completes.

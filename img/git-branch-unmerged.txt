@@ -1,0 +1,1 @@
+A Git commit graph shows `master` pointing to `3c04417` (“List Coaches”) and `bronco` pointing to `a75eb30` (“Cosmo Backflip”), with separate histories that have not yet been merged. The `head` reference points to `master`.
