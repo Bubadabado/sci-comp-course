@@ -143,3 +143,64 @@ table td { border: 1px solid #666666; }
 .highlight .vg { color: #006073; }
 .highlight .vi { color: #006073; }
 .highlight .il { color: #10A170; }
+
+/* WCAG 2.1 AA contrast overrides */
+a {
+  color: #006073;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+a:visited {
+  color: #663399;
+}
+
+a:hover,
+a:focus {
+  color: #002E5D;
+}
+
+.site-title,
+.site-title:visited,
+.site-nav .page-link {
+  text-decoration: none;
+}
+
+blockquote,
+.footer-col-wrapper,
+.post-meta,
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs,
+.highlight .gh,
+.highlight .go,
+.highlight .gp,
+.highlight .gu,
+.highlight .w,
+.highlight .bp {
+  color: #666666;
+}
+
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .s1 {
+  color: #A3082A;
+}
+
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .sr,
+.highlight .il {
+  color: #006141;
+}
