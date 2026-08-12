@@ -1,1 +1,1 @@
-A keyboard supplies stdin to the VLC media player; VLC's stdout is shown as a normal stream, while stderr is directed toward a warning output represented by a small portrait and warning symbol.
+Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'vlc media player.' stdout (1) connects to a movie, and stderr (2) connects to a caution sign which represents error.log.

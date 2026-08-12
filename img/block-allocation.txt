@@ -1,1 +1,1 @@
-A block-allocation diagram uses a legend to distinguish available, wasted, and used space, then shows several vertical storage layouts containing different combinations of those block types. The layouts illustrate fragmentation and unused gaps between allocated regions.
+A block-allocation diagram uses a legend to distinguish available, wasted, and used space, then shows several vertical storage layouts containing different combinations of those block types. The layouts illustrate that blocks that are partially full of used space still have a little bit of wasted space.

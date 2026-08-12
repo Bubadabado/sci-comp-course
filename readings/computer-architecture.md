@@ -19,7 +19,7 @@ Most servers have 1, 2, or 4 chips. It gets increasingly hard to set up the comm
 
 The communication fabric between these CPUs is generally a fully-connected mesh topology, where every endpoint has a direct connection to every other endpoint.
 
-![Three panels compare CPU architectures: one CPU has zero communication paths, two CPUs have one path, and four CPUs have six pairwise communication paths. Boxes labeled CPU are connected by arrows representing the available links.](../img/multi-cpu-architecture.png)
+![Three panels compare CPU architectures: The panel labeled "1-CPU-Architecture" shows a single CPU that has zero communication paths. A panel labeled "2-CPU-Architecture" shows two CPUs that have a single communication path between them. The final panel labled "4-CPU-Architecture" shows four CPUs with a total of six communication paths between them all.](../img/multi-cpu-architecture.png)
 
 
 

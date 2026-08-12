@@ -1,1 +1,1 @@
-A diagram shows standard input feeding a Linux `sort` command, while the command produces standard output (stdout) and standard error (stderr) for the terminal.
+This time, it is not a keyboard that is connected to the linux program via a pipe labeled stdin, but it is a group of unsorted cats. The linux program this time is named 'sort,' and its output from the stdout (1) pipe is a line of neatly sorted cats. The stderr (2) pipe connects to the linux terminal.

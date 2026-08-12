@@ -1,1 +1,1 @@
-A keyboard feeds stdin to `bionano_software`, whose stdout and stderr streams are shown leading to separate output destinations represented by a DNA symbol and a warning symbol.
+Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'bionano_software.' stdout (1) connects to a dna strand that represents output.log, and stderr (2) connects to a caution sign which represents the error.log.

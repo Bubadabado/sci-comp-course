@@ -20,7 +20,7 @@ How do you back up your projects? Here are what some people consider backups:
 
 And what about keeping versions of projects? Versioning is to keep snapshots of a project as it progresses. Many students email themselves a copy of a paper each time it reaches a significant milestone. Sometimes our versioning tells a tragic story:
 
-![A Windows file-browser screenshot titled “A STORY TOLD IN FILE NAMES” lists chronologically named data files, analysis documents, a thesis outline, meeting notes, a junk folder, and a final “startingover” file, suggesting a research project’s fustrating history told through filenames.](../img/story-in-filenames.gif)
+![A Windows file-browser screenshot titled “A STORY TOLD IN FILE NAMES” lists A series of .dat files sorted by date modified ascending. The filenames in order are as follows: test.dat, re-test.dat, re-re-test.dat, calibrate.dat, huh??.dat, WTF.dat, aaarrrgh.dat, #$@*&!!.dat, crap.dat, notbad.dat, wohoo!!.dat, and finally USETHISONE.dat. Following that series of files are three more named: analysis_graphs.xls, ThesisOutline!.doc, Notes_Meeting_with_ProfSmith.txt, and a folder named JUNK... At the very bottom is the currently selected file named startingover.dat. Copyright: Jorge Cham, www.phdcomics.com](../img/story-in-filenames.gif)
 
 Version control is a solution to these issues. Good version control will
 
