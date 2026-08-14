@@ -10,8 +10,13 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export GEM_PATH="$GEM_HOME"
 
 # Install Ruby if you don't have it
+# Ubuntu:
 sudo snap switch ruby --channel=3.2/stable
 sudo snap refresh ruby
+
+# Debian/Ubuntu based:
+sudo apt update && sudo apt install ruby-full
+sudo apt install ruby-bundler
 
 # Install Ruby stuff and run
 bundle install
