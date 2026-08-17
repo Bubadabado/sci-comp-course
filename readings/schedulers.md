@@ -11,7 +11,7 @@ Slurm is both a resource manager and a work scheduler. It's nearly ubiquitous in
 
 Where does Slurm come in and why do we need a scheduler/resource manager? Slurm controls access to the compute nodes on our cluster. You connect to the supercomputer (a login node) via SSH (secure shell); everything right of the brown line in the image is the supercomputer. Login nodes are for looking at/moving around your data, downloading/uploading data, submitting jobs, but NOT for heavy computation since long-running tasks get killed. Instead, you want to submit jobs where you are doing your computation via Slurm (sbatch, salloc, srun ). You choose the amount of time, memory, cores, etc. Jobs run on compute nodes which have no internet access. There are about a thousand of them with around 40,000 total cores as of this writing.
 
-![Our cluster's layout](../img/cluster-layout.png)
+![A cluster-layout diagram connects a user’s computer to login nodes over SSH and login nodes to compute nodes through Slurm. Login nodes and compute nodes share storage through NFS, and the login environment is also connected to the internet.](../img/cluster-layout.png)
 
 Each compute node runs `slurmd`. `sbatch` submits a job to the scheduling system's controller, `slurmctld`. The controller finds free resources or schedules the job to run when resources will become available. When it is time to launch the job, the controller sends the job to the `slurmd` running on the chosen compute node. Then `slurmd` runs the script that the user submitted.
 
@@ -84,8 +84,8 @@ To illustrate, the graph on the left shows a real user's usage over time (time i
 **tl;dr shorten your walltimes if you can**.
 
 <p float="left">
-  <img src="../img/cpus-per-account.png" width="300" />
-  <img src="../img/cpus-per-user.png" width="470" /> 
+  <img src="../img/cpus-per-account.png" width="300" alt="A line graph titled “CPUs per Account” shows CPU usage over time for multiple accounts. An annotation indicates that jobs with a seven-day maximum are limited to less CPUs per account than jobs with a three-day maximum." />
+  <img src="../img/cpus-per-user.png" width="470" alt="A line graph titled “CPUs per User” plots CPU usage over time for multiple users or processes, with several colored traces rising, falling, and changing in discrete steps across the chart." />
 </p>
 
 
@@ -96,7 +96,7 @@ To illustrate, the graph on the left shows a real user's usage over time (time i
 
 Schedulers try to avoid idling nodes. Smaller jobs start faster as backfill will put small jobs in gaps between big jobs. Let's look at the following example. Each row represents a node/server. The transparent cells are unscheduled time whereas the colored cells represent job allocations. The same color is one job each, but can span several nodes as is the case with purple and green.
 
-![Backfill](../img/backfill.png)
+![A grid of nodes N0–N9 shows jobs occupying different numbers of time blocks, with a vertical column at block 13 stopping all nodes. Empty gaps before that column illustrate space that can be filled by shorter jobs through backfilling.](../img/backfill.png)
 
 Note the brown job that requires all 10 nodes. The soonest it can be scheduled is after the job on N2 is complete. This is what regular scheduling looks like. Lots of wasted time! Let's say you wanted to run a job that requires 18 hours on 1 node. Based on the current schedule, when/where can it run? It can't start until after the brown job has finished! But, if you can reduce your walltime to 6 hours, you can start immediately on N7. This is what backfill looks like: starting a lower priority job before a higher priority job in such a way that it doesn't delay the start of the higher priority job. 
 

@@ -1,0 +1,1 @@
+A Git status diagram shows `README.txt` and `hello.sh` in the Unmodified area and corresponding staged copies, with arrows indicating that the files came from a prior commit and have not changed.

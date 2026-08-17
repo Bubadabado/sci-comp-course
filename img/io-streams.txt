@@ -1,0 +1,1 @@
+A pipe labled 'stdin' connects a keyboard to `bionano_software.' To additional pipes are connected to the other side of `bionano_software`, one of which is named "stdout (1)" and the other "stderr (2)." Stdout connects to an image of a DNA strand, and stderr connects to an image of a caution sign.

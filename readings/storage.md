@@ -23,7 +23,7 @@ The most important measures of a storage system are:
 
 When you access a file, either for read or write operations, how much you access at a time is extremely important. Each read incurs a certain penalty, no matter how much data is accessed. Accessing 1MiB of a file 10 times is slower than accessing 10MiB once.
 
-![I/O access patterns](../img/io-access-patterns.png)
+![Two file-access patterns are compared: reading two large contiguous regions requires two reads, while reading a checkerboard pattern of small regions requires sixteen reads.](../img/io-access-patterns.png)
 
 Each file operation has a certain amount of overhead. If you're doing small numbers of large block I/O, you're most likely to hit the bandwidth limit first; if you're doing lots of small block I/O, you're most likely to hit the IOPS limit of the storage first. Effectively all storage can do large-block transfers pretty well, but no storage system does IOPS really well except in very specialized (and usually expensive) cases. 
 
@@ -80,7 +80,7 @@ Whenever you `flush()` or `close()` a file, the host has to empty its file cache
 
 Small files also use storage inefficiently. Files are stored in 1 or more allocation **blocks**, which are the size of the minimum addressable space on the filesystem. These block sizes can vary between filesystems, but it is usually between 4 KiB and 32 KiB. Unoccupied space in a partially-used block cannot be used by another file. On a system with 4 KiB blocks, a 100 byte file, a 1 KiB file, and a 4 KiB file will each take up 4 KiB.
 
-![Block overhead](../img/block-allocation.png)
+![A block-allocation diagram uses a legend to distinguish available, wasted, and used space, then shows several vertical storage layouts containing different combinations of those block types. The layouts illustrate that blocks that are partially full of used space still have a little bit of wasted space.](../img/block-allocation.png)
 
 
 

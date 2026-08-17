@@ -1,0 +1,1 @@
+A Git status diagram shows modified `README.txt` and `hello.sh` moving into the Staged area, while the corresponding files remain in the Modified area awaiting a commit.

@@ -1,0 +1,1 @@
+A keyboard now once again connects to a linux program via stdin, the name of the linux program being 'automated_task.sh.' However, now both stdout and stderr connect to a black hole, representing /dev/null.

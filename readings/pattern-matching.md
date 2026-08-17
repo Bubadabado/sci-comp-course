@@ -7,7 +7,7 @@
 
 ## Regex
 
-<img style="float: right;" src="../img/set-game.jpg">
+<img style="float: right;" src="../img/set-game.jpg" alt="A 4-by-3 grid of twelve cards from the game Set displays combinations of colored symbols, symbol shapes, counts, and solid or striped fills.">
 
 If any of you have played the card game of Set, then you will know that it is a pattern-matching game based on some basic rules. The rules for matching three cards are:
 

@@ -1,0 +1,1 @@
+A Git commit graph shows the tag `v1.0` attached to commit `3c04417` (“List Coaches”), while `master` and `head` point to the later merge commit `672b43b`; a burst labeled “TAG!” highlights the tag.

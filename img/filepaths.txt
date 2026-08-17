@@ -1,0 +1,1 @@
+An annotated example path, `/home/cosmo/computer/cougar_genes/.pairwise42of420.align.gz`, explains that paths begin with `/` as the root, use forward slashes as separators, are case-sensitive, can contain hidden dot-prefixed names, and may use file extensions such as `.gz`. Said file extensions are not binding to an application.

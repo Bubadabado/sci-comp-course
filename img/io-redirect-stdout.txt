@@ -1,0 +1,1 @@
+Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'grep.' stdout (1) connects to a txt file, and stderr (2) connects to the linux terminal.

@@ -11,7 +11,7 @@ Linux allows you to manipulate input and output streams (I/O streams). Input str
 | `stdout` | Normal output | 1 | Terminal |
 | `stderr` | Error output | 2 | Terminal |
 
-![I/O Streams](../img/io-streams.png)
+![A pipe labled 'stdin' connects a keyboard to `bionano_software.' To additional pipes are connected to the other side of `bionano_software`, one of which is named "stdout (1)" and the other "stderr (2)." Stdout connects to an image of a DNA strand, and stderr connects to an image of a caution sign."](../img/io-streams.png)
 
 ## Redirects
 
@@ -26,7 +26,7 @@ grep -i 'claws al ghul' catman_begins.txt > output.txt
 grep -i 'claws al ghul' catman_begins.txt >> output.txt
 ```
 
-![Redirect stdout](../img/io-redirect-stdout.png)
+![Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'grep.' stdout (1) connects to a txt file, and stderr (2) connects to the linux terminal.](../img/io-redirect-stdout.png)
 
 ### `stderr`: "`2>`" or "`2>>`"
 
@@ -39,7 +39,7 @@ vlc mr_smith_goes_to_pawshington.mpg 2> error.log
 vlc mr_smith_goes_to_pawshington.mpg 2>> error.log
 ```
 
-![Redirect stderr](../img/io-redirect-stderr.png)
+![Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'vlc media player.' stdout (1) connects to a movie, and stderr (2) connects to a caution sign which represents error.log.](../img/io-redirect-stderr.png)
 
 ### Both `stdout` and `stderr`
 
@@ -50,7 +50,7 @@ bionano_software > output.log 2> error.log   # create
 bionano_software >> output.log 2>> error.log # append
 ```
 
-![Redirect both](../img/io-redirect-stdout-stderr.png)
+![Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'bionano_software.' stdout (1) connects to a dna strand that represents output.log, and stderr (2) connects to a caution sign which represents the error.log.](../img/io-redirect-stdout-stderr.png)
 
 ### `stdin`: "`<`"
 
@@ -65,7 +65,7 @@ sort < cats.txt > sorted_cats.txt
 sort cats.txt > sorted_cats.txt
 ```
 
-![Redirect stdin](../img/redirect-stdin.png)
+![This time, it is not a keyboard that is connected to the linux program via a pipe labeled stdin, but it is a group of unsorted cats. The linux program this time is named 'sort,' and its output from the stdout (1) pipe is a line of neatly sorted cats. The stderr (2) pipe connects to the linux terminal.](../img/redirect-stdin.png)
 
 ### Combine streams
 
@@ -84,4 +84,4 @@ ping -c 10 procatinator.com &> output.txt # shorthand
 ./automated_task.sh &> /dev/null # run the program, throwing away all output
 ```
 
-![Discard output](../img/io-discard-output.png)
+![A keyboard now once again connects to a linux program via stdin, the name of the linux program being 'automated_task.sh.' However, now both stdout and stderr connect to a black hole, representing /dev/null.](../img/io-discard-output.png)

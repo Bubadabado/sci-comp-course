@@ -1,0 +1,1 @@
+The path `/home/cosmo/computer/cougar_genes/..` is shown with an arrow looping upward and back to the "computer" directory, illustrating that '..' represents the parent directory.

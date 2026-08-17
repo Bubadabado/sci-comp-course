@@ -1,0 +1,1 @@
+A line graph titled “CPUs per User” plots CPU usage over time for multiple users or processes, with several colored traces rising, falling, and changing in discrete steps across the chart.

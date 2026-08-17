@@ -1,0 +1,1 @@
+A Git status diagram shows `README.txt` and `hello.sh` in the Modified area, with arrows from the Unmodified area indicating that both files have been changed since the initial commit.

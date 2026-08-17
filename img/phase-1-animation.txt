@@ -1,0 +1,1 @@
+An animation shows a large dark red quadrilateral changing shape based on the dampened wave equation.

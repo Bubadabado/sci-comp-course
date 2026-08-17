@@ -1,0 +1,1 @@
+A Git commit graph shows `master` at `bed07eb` (“Cougarettes Dance”) and the `bronco` branch at `ff01056` (“Cosmo Dances”), with both branches sharing the earlier `b501eb8` (“Cosmo”) commit before a rebase.

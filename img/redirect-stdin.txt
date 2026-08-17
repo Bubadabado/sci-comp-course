@@ -1,0 +1,1 @@
+This time, it is not a keyboard that is connected to the linux program via a pipe labeled stdin, but it is a group of unsorted cats. The linux program this time is named 'sort,' and its output from the stdout (1) pipe is a line of neatly sorted cats. The stderr (2) pipe connects to the linux terminal.

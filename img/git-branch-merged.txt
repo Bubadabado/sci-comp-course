@@ -1,0 +1,1 @@
+A Git commit graph shows the `bronco` branch merged into `master` at commit `672b43b` (“Merge branch bronco”), which has two parent histories and leads to the earlier commits on both branches. The `head` reference points to `master`.
