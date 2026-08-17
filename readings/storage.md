@@ -80,7 +80,7 @@ Whenever you `flush()` or `close()` a file, the host has to empty its file cache
 
 Small files also use storage inefficiently. Files are stored in 1 or more allocation **blocks**, which are the size of the minimum addressable space on the filesystem. These block sizes can vary between filesystems, but it is usually between 4 KiB and 32 KiB. Unoccupied space in a partially-used block cannot be used by another file. On a system with 4 KiB blocks, a 100 byte file, a 1 KiB file, and a 4 KiB file will each take up 4 KiB.
 
-![A block-allocation diagram uses a legend to distinguish available, wasted, and used space, then shows several vertical storage layouts containing different combinations of those block types. The layouts illustrate fragmentation and unused gaps between allocated regions.](../img/block-allocation.png)
+![A block-allocation diagram uses a legend to distinguish available, wasted, and used space, then shows several vertical storage layouts containing different combinations of those block types. The layouts illustrate that blocks that are partially full of used space still have a little bit of wasted space.](../img/block-allocation.png)
 
 
 

@@ -55,7 +55,7 @@ Chef Core knows about concurrency and decides to partially reorder the tasks lik
 
 Total time: 150 minutes
 
-![A concurrent-execution timeline shows tasks 1.1 and 1.2 followed by tasks 2.1 and 2.2, then short tasks 1.3 and 2.3 at the end, illustrating overlapping lifelines for two task groups on one CPU core.](../img/concurrent_1.png)
+![A concurrent-execution timeline shows tasks 1.1 and 1.2 followed by tasks 2.1 and 2.2, breifly interrupted by task 1.3, before task 2.3 at the end, illustrating overlapping lifelines for two task groups on one CPU core.](../img/concurrent_1.png)
 
 Now both the soup and the breadsticks can be served at roughly the same time! Because the main tasks overlap, Chef Core is running concurrently. 
 

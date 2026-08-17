@@ -9,13 +9,13 @@ The first thing you’ll encounter with the Linux shell is the filesystem. You a
 
 A filepath starts with a forward slash called 'root'. This indicates the beginning of the directory tree. Each directory or folder is then separated by another forward slash. It's important to note that files and directories are case sensitive. If a file or directory begins with a dot (.), it is considered hidden. Once your path gets to its final directory and you choose a file to work with, you are not constrained by the file extension to work with a specific application. Rather, you can use many applications to perform the needed tasks.
 
-![An annotated example path, `/home/cosmo/computer/cougar_genes/.pairwise42of420.align.gz`, explains that paths begin with `/` as the root, use forward slashes as separators, are case-sensitive, can contain hidden dot-prefixed names, and may use file extensions such as `.gz`.](../img/filepaths.png)
+![An annotated example path, `/home/cosmo/computer/cougar_genes/.pairwise42of420.align.gz`, explains that paths begin with `/` as the root, use forward slashes as separators, are case-sensitive, can contain hidden dot-prefixed names, and may use file extensions such as `.gz`. Said file extensions are not binding to an application.](../img/filepaths.png)
 
 There are two special links within a directory, "`.`" and "`..`". A single dot points to the directory in which it resides, and a double dot points to the parent directory.
 
 ![The path `/home/cosmo/computer/cougar_genes/.` is shown with an arrow looping back to the same directory, illustrating that `.` represents the current directory.](../img/current-directory.png)
 
-![The path `/home/cosmo/computer/cougar_genes/..` is shown with an arrow looping upward and back to the "computer" directory, illustrating navigation to a parent directory.](../img/parent-directory.png)
+![The path `/home/cosmo/computer/cougar_genes/..` is shown with an arrow looping upward and back to the "computer" directory, illustrating that '..' represents the parent directory.](../img/parent-directory.png)
 
 ### Absolute vs Relative Paths
 

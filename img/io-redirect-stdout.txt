@@ -1,1 +1,1 @@
-A keyboard supplies stdin to the Linux `grep` command; its stdout stream is redirected to a text file while stderr remains directed toward the Linux terminal.
+Similar to the previous image, stdin connects a keyboard to a linux program, this time named 'grep.' stdout (1) connects to a txt file, and stderr (2) connects to the linux terminal.

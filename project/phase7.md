@@ -31,7 +31,7 @@ Debugging MPI programs can be tricky. The ["Debugging, Profiling, and Optimizati
 
 Writing is very similar to the read, but in reverse. Make sure that each process only writes out the rows it's responsible for and NOT the halos.
 
-![A schematic explains parallel MPI-IO writing: multiple ranks hold portions of arrays `u` and `v`, and each process writes its assigned data and halo information into separate regions of `wavefiles/2D/2d-tiny-out.wo` using an offset, layout, and `write_at` operation.](../img/mpi-write.png)
+![A schematic explains parallel MPI-IO writing: multiple ranks hold portions of arrays `u` and `v`, and each process writes its assigned data excluding halo information into separate regions of `wavefiles/2D/2d-tiny-out.wo` using an offset, layout, and `write()` operation.](../img/mpi-write.png)
 
 Now that you can write, don't forget about [`wavefiles`](https://byuhpc.github.io/sci-comp-course/resources.html#the-project). `wavediff` will help you quickly identify differences and `waveshow` will print the full input file. Use these liberally as you debug.
 
@@ -72,7 +72,7 @@ Feel free to rename things more appropriately for our project.
 
 This is what `step()` looks like:
 
-![Three stages of an MPI `step()` operation show each rank updating only the rows it owns with a Laplacian, then exchanging halo values, and finally producing updated values for the next step. For the first step() swap, all interior cells show 0.0546353.](../img/mpi-step.png)
+![Three stages of an MPI `step()` operation show each rank updating only the rows it owns with a Laplacian, then exchanging halo values, and finally producing updated values, which are exchanged using exchange_halos() in preparation for the next step()](../img/mpi-step.png)
 
 Food for thought: Depending on how you implement things, you might not need to exchange halos for `u` because it's only using `v` data which has been updated.
 
