@@ -3,7 +3,7 @@
 
 # Shell Aliases, Functions, and Scripts
 
-Aliases, functions, and scripts save effort and prevent code duplication in bash. Aliases are abbreviations that are primarily used to save typing in interactive shells, while functions are powerful, general-purpose [subroutines](https://en.wikipedia.org/wiki/Subroutine). Scripts are text files with shell commands that can be executed.
+Aliases, functions, and scripts save effort and prevent code duplication in bash. Aliases are abbreviations that are primarily used to save typing in interactive shells, while functions are powerful, general-purpose [subroutines](https://www.computingatschool.org.uk/forum-news-blogs/2023/july/confused-about-subroutine-procedure-function-and-method/). Scripts are text files with shell commands that can be executed.
 
 
 

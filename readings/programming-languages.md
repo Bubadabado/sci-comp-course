@@ -3,7 +3,7 @@
 
 # Programming Languages
 
-There are [many ways](https://www.techtarget.com/searchapparchitecture/tip/Functional-vs-object-oriented-programming-The-basics) [to categorize](https://en.wikipedia.org/wiki/Data-oriented_design) [programming languages](https://www.freecodecamp.org/news/compiled-versus-interpreted-languages/). For the purposes of this lesson, the focus is on how a user interacts with the tools for a language from a workflow viewpoint. As such, the programming languages will be split into three categories: interpreted, compiled, and a hybrid of the two.
+There are [many ways](https://www.geeksforgeeks.org/software-engineering/difference-between-functional-programming-and-object-oriented-programming/) [to categorize](https://en.wikipedia.org/wiki/Data-oriented_design) [programming languages](https://www.freecodecamp.org/news/compiled-versus-interpreted-languages/). For the purposes of this lesson, the focus is on how a user interacts with the tools for a language from a workflow viewpoint. As such, the programming languages will be split into three categories: interpreted, compiled, and a hybrid of the two.
 
 There are a few steps that code of any language has to go through before being run by a machine:
 
